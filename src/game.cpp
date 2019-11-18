@@ -6,6 +6,11 @@
 #include "game.hpp"
 #include "game_state.hpp"
 
+void Game::loadTextures()
+{
+    textureManager.loadTexture("background", "media/background.png");
+}
+
 void Game::pushState(GameState *state)
 {
     this->states.push(state);
@@ -59,8 +64,12 @@ void Game::gameLoop()
 
 Game::Game()
 {
+    this->loadTextures();
+
     this->window.create(sf::VideoMode(800, 600), "City Builder");
     this->window.setFramerateLimit(60);
+
+    this->background.setTexture(this->textureManager.getRef("background"));
 }
 
 Game::~Game()
