@@ -1,0 +1,8 @@
+.DS_STORE
+.vscode
+build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+citybuilder
+cmake_install.cmake
